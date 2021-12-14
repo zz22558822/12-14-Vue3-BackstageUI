@@ -1,0 +1,159 @@
+// @import 'reset';
+@import './mixin/text-hidden';
+@import './mixin/RWD';
+
+thead{
+    text-align: center;
+    font-size: 20px;
+    tr{
+        th{
+            width: 25%;
+        }
+        .thead-Title{
+            @include mobile-767{
+                width: 20%;
+            }
+            @include mobile-400{
+                width: 15%;
+            }
+        }
+        .thead-Img{
+            @include mobile-767{
+                width: 40%;
+            }
+            @include mobile-400{
+                width: 45%;
+            }
+        }
+        .thead-Switch{
+            @include mobile-767{
+                width: 20%;
+            }
+            @include mobile-400{
+                display: none;
+            }
+        }
+        .thead-Edit{
+            @include mobile-767{
+                width: 20%;
+            }
+            @include mobile-400{
+                width: 25%;
+            }
+        }
+    }
+}
+tbody{
+    tr{
+        td{
+            img{
+                max-width: 100%;
+                max-height: 250px;
+            }
+        }
+        .Center{
+            text-align: center;
+        }
+        .thead-Switch{
+            @include mobile-400{
+                display: none;
+            }
+        }
+    }
+}
+
+.Center input[type="checkbox"]{
+    margin: 3px 5px;
+}
+
+.btn{
+    margin: 0 5px 15px;
+    padding: 10px 25px;
+    white-space:nowrap;
+    @include mobile-767{
+        margin: 0 2px 10px;
+        padding: 8px 20px;
+    }
+    @include mobile-414{
+        padding: 12px 10px;
+    }
+}
+
+.add-btn{
+    width: 95%;
+    margin: 10px;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 8px;
+}
+
+.mb-3{
+    img{
+        max-width: 90%;
+        max-height: 900px;
+    }
+    .imgBox{
+        text-align: center;
+    }
+} 
+
+.editBox{
+    background: #FFF;
+    padding: 50px;
+    border-radius: 5px;
+    border: 5px solid #454545;
+    width: 50%;
+    max-height: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* 滾動條設定 、 隱藏設定 */
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    &::-webkit-scrollbar {
+        display: none; /* Chrome Safari */
+    }
+    @include mobile-914{
+        width: 70%;
+    }
+    @include mobile-767{
+        width: 85%;
+    }
+    @include mobile-414{
+        width: 100%;
+        height: 100%;
+    }
+
+    .margin{
+        margin-top: 25px;
+    }
+    .editBox-close{
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-decoration: none;
+        font-weight: bold;
+        color: #FFF;
+        background: red;
+        font-size: 200%;
+        padding: 0 0.4em;
+        transition: all 0.8s;
+        &:hover{
+            color: grey;
+            background: orange;
+            transition: all 0.8s;
+        }
+    }
+}
+
+.text-error{
+    margin: 5px 0 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}
